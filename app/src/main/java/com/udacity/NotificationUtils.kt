@@ -5,6 +5,7 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.graphics.BitmapFactory
+import android.provider.Settings.Global.getString
 import androidx.core.app.NotificationCompat
 
 private val NOTIFICATION_ID = 0
@@ -30,9 +31,12 @@ fun NotificationManager.sendNotification(message: Message, applicationContext: C
         .setContentTitle(applicationContext
             .getString(R.string.notification_title))
         .setContentText("Downloading of ${message.name} ${message.status} ")
-        .setContentIntent(contentPendingIntent)
+        //.setContentIntent(contentPendingIntent)
         .setAutoCancel(true)
         .setPriority(NotificationCompat.PRIORITY_HIGH)
+        .addAction(
+            android.R.drawable.btn_radio, "Check the status",
+            contentPendingIntent)
 
     notify(NOTIFICATION_ID, builder.build())
 }

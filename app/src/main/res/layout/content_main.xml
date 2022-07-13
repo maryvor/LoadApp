@@ -15,11 +15,14 @@
         android:layout_height="60dp"
         android:layout_margin="20dp"
         android:layout_marginBottom="24dp"
+        app:backgroundColor="@color/colorPrimary"
+        app:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radio_group"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        />
 
 
     <RadioGroup
